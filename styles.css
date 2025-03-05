@@ -11,7 +11,7 @@
     --heading-font: 'Montserrat', sans-serif;
     --body-font: 'Roboto', sans-serif;
 }
-
+}
 * {
     margin: 0;
     padding: 0;
@@ -308,7 +308,7 @@ footer {
     header h1 {
         font-size: 1.2rem;
     }
-    
+}
     .logo-container {
         height: 40px;
     }
@@ -329,4 +329,3 @@ footer {
         padding: 8px 10px;
         font-size: 0.9rem;
     }
-}
