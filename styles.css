@@ -1,3 +1,16 @@
+/* Variables de color y fuentes */
+:root {
+    --primary-color: #0e1e5b;
+    --secondary-color: #00a0e4;
+    --accent-color: #ffd700;
+    --text-color: #333;
+    --light-bg: #f5f5f5;
+    --border-color: #ddd;
+    --section-border: #ccc;
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
 /* Reset básico */
 * {
     margin: 0;
@@ -6,18 +19,19 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--body-font);
     line-height: 1.6;
+    color: var(--text-color);
 }
 
 /* Modelo de caja para el header */
 header {
     width: 100%;
     height: 150px;
-    border-bottom: 3px solid #0e1e5b;
+    border-bottom: 3px solid var(--primary-color);
     padding: 20px;
     margin-bottom: 20px;
-    background-color: #f5f5f5;
+    background-color: var(--light-bg);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -38,12 +52,20 @@ header {
     max-width: 100%;
 }
 
+header h1 {
+    font-size: 1.8rem;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
 /* Modelo de caja para la navegación */
 nav {
     width: 100%;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     padding: 15px;
     margin-bottom: 20px;
+    background-color: var(--light-bg);
 }
 
 nav ul {
@@ -54,16 +76,19 @@ nav ul {
 }
 
 nav li {
-    margin: 0 20px;
+    margin: 0 20px 10px;
 }
 
 nav a {
     text-decoration: none;
-    color: #0e1e5b;
-    font-weight: bold;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-family: var(--heading-font);
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
+    color: var(--secondary-color);
     text-decoration: underline;
 }
 
@@ -80,13 +105,23 @@ section {
     width: 90%;
     margin: 0 auto 30px;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--section-border);
     border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 section h2 {
     margin-bottom: 15px;
-    color: #0e1e5b;
+    color: var(--primary-color);
+    font-family: var(--heading-font);
+    font-weight: 700;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+}
+
+section p {
+    margin-bottom: 15px;
 }
 
 section ul {
@@ -102,11 +137,57 @@ section li {
 footer {
     width: 100%;
     height: 60px;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--border-color);
     padding: 20px;
     margin-top: 20px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Media Queries para diseño responsivo */
+@media screen and (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav li {
+        margin: 5px 0;
+    }
+    
+    section {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+    
+    .logo-container {
+        height: 40px;
+    }
+    
+    section h2 {
+        font-size: 1.3rem;
+    }
+    
+    section p, section li {
+        font-size: 0.9rem;
+    }
 }
